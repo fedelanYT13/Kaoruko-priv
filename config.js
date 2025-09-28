@@ -40,18 +40,18 @@ global.textbot = `𝑲𝒂𝒐𝒓𝒖𝒌𝒐 𝒃𝒐𝒕 𝐌𝐚𝐝𝐞 �
 global.vs = '2.2.0'
 global.publi = '🌙 𝐒𝐢𝐠𝐮𝐞 𝐄𝐥 𝐂𝐚𝐧𝐚𝐥 ♥︎'
 global.currency = "KaruCoins"
-global.banner = "https://cdn.stellarwa.xyz/files/1758889351528.jpeg"
-global.icono = "https://cdn.stellarwa.xyz/files/1758889351528.jpeg"
-global.catalogo = fs.readFileSync('./media/catalogo.jpg')
+global.banner = "https://files.catbox.moe/gm249p.jpg"
+global.icono = "https://files.catbox.moe/gm249p.jpg"
+global.catalogo = fs.readFileSync('./storage/catalogo.jpg')
 
 //*──────────────────────────────*
 
-global.imagen1 = fs.readFileSync('./media/menus/Menu.jpg')
-global.imagen2 = fs.readFileSync('./media/menus/Menu2.jpg')
-global.imagen3 = fs.readFileSync('./media/menus/Menu3.jpg')
-global.welcome = fs.readFileSync('./media/welcome.jpg')
-global.adios = fs.readFileSync('./media/adios.jpg')
-global.catalogo = fs.readFileSync('./media/catalogo.jpg')
+global.imagen1 = fs.readFileSync('.//menus/Menu.jpg')
+global.imagen2 = fs.readFileSync('./storage/menus/Menu2.jpg')
+global.imagen3 = fs.readFileSync('./storage/menus/Menu3.jpg')
+global.welcome = fs.readFileSync('./storage/welcome.jpg')
+global.adios = fs.readFileSync('./storage/adios.jpg')
+global.catalogo = fs.readFileSync('./storage/catalogo.jpg')
 
 //*──────────────────────────────*
 
@@ -63,7 +63,7 @@ global.channel = 'https://whatsapp.com/channel/0029Vaz6RTR0LKZIKwudX32x'
 global.insta = 'https://www.instagram.com/dev_fedexyz13'
 
 global.ch = {
-  ch1: "120363374826926142@newsletter"
+  ch1: "120363423335018677@newsletter"
 } // ← CERRADO CORRECTAMENTE ✅
 
 //*──────────────────────────────*
