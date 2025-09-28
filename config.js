@@ -46,11 +46,6 @@ global.catalogo = fs.readFileSync('./storage/catalogo.jpg')
 
 //*──────────────────────────────*
 
-global.imagen1 = fs.readFileSync('.//menus/Menu.jpg')
-global.imagen2 = fs.readFileSync('./storage/menus/Menu2.jpg')
-global.imagen3 = fs.readFileSync('./storage/menus/Menu3.jpg')
-global.welcome = fs.readFileSync('./storage/welcome.jpg')
-global.adios = fs.readFileSync('./storage/adios.jpg')
 global.catalogo = fs.readFileSync('./storage/catalogo.jpg')
 
 //*──────────────────────────────*
@@ -79,7 +74,7 @@ global.estilo = {
       itemCount : -999999, 
       status: 1, 
       surface : 1, 
-      message: '👑【✫𝐑𝐲𝐮𝐬𝐞𝐢  乂 𝐂𝐥𝐮𝐛✫】☆', 
+      message: '🌘 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝒕𝒆𝒂𝒎 ☽ ', 
       orderTitle: 'Bang', 
       thumbnail: global.catalogo, 
       sellerJid: '0@s.whatsapp.net'
