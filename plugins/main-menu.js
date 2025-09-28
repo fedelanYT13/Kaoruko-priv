@@ -133,9 +133,6 @@ END:VCARD`;
   fileName: 'Moonfrare.pdf',
   mimetype: 'application/pdf',
   caption: finalMenu,
-  buttons: [
-    { buttonId: '.code', buttonText: { displayText: '☕ ᴄᴏᴅᴇ'}, type: 1}
-  ],
   contextInfo: {
     mentionedJid: [m.sender],
     isForwarded: true,
