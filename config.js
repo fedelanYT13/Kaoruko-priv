@@ -8,11 +8,11 @@ import axios from 'axios'
 import moment from 'moment-timezone' 
 
 global.owner = [
-   '51901019299'
+   '5491156178758', '5491137612743'
 ]
 
 global.creadorbot = [
-   '51901019299'
+   '5491156178758', '5491137612743'
 ]
 
 global.mods = []
@@ -21,8 +21,8 @@ global.prems = []
 global.libreria = 'Baileys'
 global.baileys = 'V 7.0.0-rc.3' 
 global.vs = '2.2.0'
-global.nameqr = 'Alya Wa-Bot'
-global.namebot = 'Alya Wa-Bot'
+global.nameqr = 'Kaoruko bot'
+global.namebot = 'Kaoruko Wa-Bot'
 global.sessions = 'auth/authv2'
 global.jadi = 'jadibots' 
 global.yukiJadibts = true // Activado
@@ -60,7 +60,7 @@ global.grupo = 'https://chat.whatsapp.com/LYLiORNWzHkIsiecvCCdgK?mode=ems_copy_t
 global.gsupport = 'https://chat.whatsapp.com/Hk7LRLL4uJP5pHYAaxusLn?mode=ems_copy_t'
 global.channel2 = 'https://whatsapp.com/channel/0029VbBC3hX3mFY5MseNZS2a'
 global.channel = 'https://whatsapp.com/channel/0029Vaz6RTR0LKZIKwudX32x'
-global.insta = 'https://www.instagram.com/angelitho.xyz'
+global.insta = 'https://www.instagram.com/dev_fedexyz13'
 
 global.ch = {
   ch1: "120363374826926142@newsletter"
