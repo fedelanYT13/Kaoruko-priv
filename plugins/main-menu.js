@@ -1,14 +1,5 @@
 import { xpRange} from '../lib/levelling.js'
-
-const textCyberpunk = (text) => {
-  const charset = {
-    a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ꜰ', g: 'ɢ',
-    h: 'ʜ', i: 'ɪ', j: 'ᴊ', k: 'ᴋ', l: 'ʟ', m: 'ᴍ', n: 'ɴ',
-    o: 'ᴏ', p: 'ᴘ', q: 'ǫ', r: 'ʀ', s: 'ꜱ', t: 'ᴛ', u: 'ᴜ',
-    v: 'ᴠ', w: 'ᴡ', x: 'x', y: 'ʏ', z: 'ᴢ'
-}
-  return text.toLowerCase().split('').map(c => charset[c] || c).join('')
-}
+import { textCyberpunk} from '../lib/fonts.js' // Asegúrate de tener esta función o incluirla directamente
 
 let tags = {
   main: textCyberpunk('sistema'),
@@ -42,29 +33,6 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p}) => {
   try {
     await conn.sendMessage(m.chat, { react: { text: '🌙', key: m.key}})
-
-    const vcard = `
-BEGIN:VCARD
-VERSION:3.0
-N:;Dev-fedexyz;;;
-FN:Dev-fedexyz
-item1.TEL;waid=13135550002:+1 (313) 555-0002
-item1.X-ABLabel:Celular
-END:VCARD`;
-
-    const quotedContact = {
-      key: {
-        fromMe: false,
-        participant: "13135550002@s.whatsapp.net",
-        remoteJid: "status@broadcast",
-},
-      message: {
-        contactMessage: {
-          displayName: "𝑲𝒂𝒐𝒓𝒖𝒌𝒐 - 𝑩𝒐𝒕",
-          vcard,
-},
-},
-};
 
     let { exp, level} = global.db.data.users[m.sender]
     let { min, xp, max} = xpRange(level, global.multiplier)
@@ -122,38 +90,42 @@ END:VCARD`;
       premium,
       groupsCount,
       readmore: String.fromCharCode(8206).repeat(4001)
-  }
+}
 
     let finalMenu = menuText.replace(/%(\w+)/g, (_, key) => replace[key] || '')
 
     const imageUrl = 'https://files.catbox.moe/gm249p.jpg'
 
     await conn.sendMessage(m.chat, {
-  document: fs.readFileSync('./package.json'),
-  fileName: 'Moonfrare.pdf',
-  mimetype: 'application/pdf',
-  caption: finalMenu,
-  contextInfo: {
-    mentionedJid: [m.sender],
-    isForwarded: true,
-    forwardingScore: 999,
-    forwardedNewsletterMessageInfo: {
-      newsletterJid: "120363423335018677@newsletter",
-      serverMessageId: '',
-      newsletterName: "🌘 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝒕𝒆𝒂𝒎 ☽"
+      image: { url: imageUrl},
+      caption: finalMenu,
+      buttons: [
+        {
+          buttonId: '.code',
+          buttonText: { displayText: '☕ ᴄᴏᴅᴇ'},
+          type: 1
+          }
+      ],
+      contextInfo: {
+        mentionedJid: [m.sender],
+        isForwarded: true,
+        forwardingScore: 999,
+        forwardedNewsletterMessageInfo: {
+          newsletterJid: "120363423335018677@newsletter",
+          serverMessageId: '',
+          newsletterName: "🌘 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝒕𝒆𝒂𝒎 ☽"
 },
-    externalAdReply: {
-      title: '☕ 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝒕𝒆𝒂𝒎 🌙\n⚡︎ 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝟐.𝟎.𝟐.𝟓 ☽',
-      thumbnailUrl: perfil,
-      mediaType: 1,
-      renderLargerThumbnail: false
+        externalAdReply: {
+          title: '☕ 𝑴𝒐𝒐𝒏𝒇𝒓𝒂𝒓𝒆 𝒕𝒆𝒂𝒎 🌙\n⚡︎ 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝟐.𝟎.𝟐.𝟓 ☽',
+          thumbnailUrl: perfil,
+          mediaType: 1,
+          renderLargerThumbnail: false
 }
 }
-}, { quoted: quotedContact})
-
+}, { quoted: m})
 } catch (e) {
     console.error(e)
-    conn.reply(m.chat, '❎ Error al generar el menú del sistema.', m)
+    conn.reply(m.chat, '❎ Error al generar el menú premium.', m)
 }
 }
 
@@ -168,4 +140,4 @@ function clockString(ms) {
   let m = isNaN(ms)? '--': Math.floor(ms / 60000) % 60
   let s = isNaN(ms)? '--': Math.floor(ms / 1000) % 60
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
-      }
+}
